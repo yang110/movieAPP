@@ -13,6 +13,9 @@
 @interface CinemaViewController ()
 {
         BOOL flag[20];
+    
+    
+    
 }
 @end
 

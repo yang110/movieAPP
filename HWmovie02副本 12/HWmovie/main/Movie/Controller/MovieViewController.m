@@ -50,7 +50,6 @@
     //对 viewController 延伸(不透明了 要加下面那句话 给延长   透明了就不用写下面那句话了)
     //self.edgesForExtendedLayout=UIRectEdgeAll;
 
-    
     //对tableView (必须是viewController的第一个视图)进行移动
     self.automaticallyAdjustsScrollViewInsets=YES;
     

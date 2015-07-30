@@ -47,7 +47,7 @@
     
     
     //可变这两个数字 来改变效果
-    int maxWidth=6;
+    int maxWidth=5;
     int maxHeight=5;
     
     //算法 绕圈
@@ -83,7 +83,7 @@
     
     int num=0;//当前加的 图的数目  ==temp时 退出循环
     
-    temp=maxHeight*maxWidth;
+    temp=maxHeight*maxWidth;//总共 小图 数
     
     
     

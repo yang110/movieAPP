@@ -20,6 +20,9 @@
     
     if (self) {
         
+        _temp=-1;
+
+        
         
         self.delegate=self;
         self.dataSource=self;
@@ -210,28 +213,38 @@
     UILabel *laber2=(UILabel *)[cell viewWithTag:100];
     UIImageView *imageView=(UIImageView *)[cell viewWithTag:200];
    
-    if (isHit[indexPath.row])
+    if (indexPath.row==_temp)
     {
-        imageView.height=cell.height-2;
-        laber2.height=cell.height-28;
-       
+        
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.2];
+        if (_isHit==YES) {
+            imageView.height=cell.height-2;
+            laber2.height=cell.height-28;
+
+        }
+        else
+        {
+            imageView.height=48;
+            laber2.height=22;
+        }
+        [UIView commitAnimations];
     }
     else
     {
         imageView.height=48;
         laber2.height=22;
     }
-
+    
     return cell;
-    
-    
+
 }
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (isHit[indexPath.row]) {
+    if (_isHit==YES&&indexPath.row==_temp) {
         
         CommentModal *modal=_commentModalArray[indexPath.row];
         CGFloat maxLabelWidth =kwidth-136;
@@ -247,11 +260,23 @@
     }
 }
 
+
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    isHit[indexPath.row]=!isHit[indexPath.row];
-    [tableView reloadData];
+//    isHit[indexPath.row]=!isHit[indexPath.row];
     
+    
+    if (_temp==indexPath.row) {
+        _isHit=!_isHit;
+    }
+    else
+    {
+        _isHit=YES;
+        _temp=indexPath.row;
+    }
+  
+    [tableView reloadData];
 }
 
 

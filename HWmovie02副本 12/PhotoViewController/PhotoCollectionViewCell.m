@@ -23,7 +23,6 @@
         
         
         _scrollView=[[PhotoScrollView alloc]initWithFrame:self.bounds];
-       
         [self.contentView addSubview:_scrollView];
         
                

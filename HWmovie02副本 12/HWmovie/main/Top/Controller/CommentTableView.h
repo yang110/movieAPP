@@ -18,7 +18,12 @@
     
     
   //  UIView *_view;//暂时顶替上面那个
-    BOOL isHit[30];
+   // BOOL isHit[30];
+    
+    
+    NSInteger _temp;
+    BOOL _isHit;
+    
     
     
 }
